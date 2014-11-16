@@ -13,7 +13,7 @@ protect_from_forgery with: :null_session
     render json: @place
   end
 
-def update
+  def update
     @place = Place.find(params[:id])
     @place.update(params.require(:place).permit(:name, :city))
     render json: @place
